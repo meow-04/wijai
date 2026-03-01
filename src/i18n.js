@@ -95,6 +95,13 @@ const resources = {
           badge: "สมุนไพร",
         },
       },
+      // ✅ เพิ่มส่วนนี้ — ข้อมูลสมุนไพรเพิ่มเติม
+      herb: {
+        usedInRecipes: "ส่วนของสมุนไพรที่ใช้ทำเมนูอาหาร",
+        usedInMedicine: "ส่วนของสมุนไพรที่ใช้ทำยา",
+        audioNarration: "เสียงบรรยาย",
+        audioNotSupported: "เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง",
+      },
     },
   },
   ms: {
@@ -190,6 +197,13 @@ const resources = {
           badge: "Herba",
         },
       },
+      // ✅ เพิ่มส่วนนี้ — ข้อมูลสมุนไพรเพิ่มเติม (มาเลย์)
+      herb: {
+        usedInRecipes: "Bahagian herba yang digunakan untuk penyediaan hidangan makanan",
+        usedInMedicine: "Bahagian herba yang digunakan untuk membuat ubat ",
+        audioNarration: "Rakaman Audio",
+        audioNotSupported: "Pelayar anda tidak menyokong mainan audio",
+      },
     },
   },
 };
@@ -199,20 +213,19 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: localStorage.getItem('userLanguage') || 'th',
-    fallbackLng: 'th',
-    supportedLngs: ['th', 'ms'],
+    lng: localStorage.getItem("userLanguage") || "th",
+    fallbackLng: "th",
+    supportedLngs: ["th", "ms"],
     interpolation: {
       escapeValue: false, // React already escapes values
     },
     react: {
-      useSuspense: false, // Disable Suspense for better error handling
+      useSuspense: false,
     },
     detection: {
-      order: ['localStorage', 'navigator'],
-      caches: ['localStorage'],
+      order: ["localStorage", "navigator"],
+      caches: ["localStorage"],
     },
   });
 
 export default i18n;
-

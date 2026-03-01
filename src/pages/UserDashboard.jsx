@@ -68,7 +68,7 @@ export default function UserDashboard() {
   return (
     <>
       <UserLayout
-        brand="เปลี่ยนเอาเอง"
+        brand="SERI GADENG"
         menuItems={menuItems}
         activeSection={activeSection}
         onChangeSection={setActiveSection}

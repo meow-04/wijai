@@ -6,16 +6,26 @@ export default function DashboardStats({ users, variant = "default" }) {
   const adminUsers = users.filter((u) => u.role === "admin").length;
 
   const stats = [
-    {
-      label: "ผู้ใช้ทั้งหมด",
-      value: totalUsers,
-      icon: FiUsers,
-      gradient: "from-blue-500 to-blue-600",
-      bgColor: "bg-blue-50",
-      iconColor: "text-blue-500",
-      borderColor: "border-blue-200",
-    },
-  ];
+  {
+    label: "ผู้ใช้ทั่วไป",
+    value: regularUsers,
+    icon: FiUser,
+    gradient: "from-green-500 to-green-600",
+    bgColor: "bg-green-50",
+    iconColor: "text-green-500",
+    borderColor: "border-green-200",
+  },
+  {
+    label: "ผู้ดูแลระบบ",
+    value: adminUsers,
+    icon: FiShield,
+    gradient: "from-purple-500 to-purple-600",
+    bgColor: "bg-purple-50",
+    iconColor: "text-purple-500",
+    borderColor: "border-purple-200",
+  },
+];
+
 
   // Variant 1: Default (Current)
   const renderDefault = () => (
